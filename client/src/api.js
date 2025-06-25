@@ -181,12 +181,19 @@ API.interceptors.request.use((config) => {
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
+  
+  // Debug logging for every request
+  console.log("🔍 Making request to:", config.baseURL + config.url);
+  console.log("🔍 Full config:", config);
+  
   return config;
 });
 
 // ✅ Log at runtime to verify env is working
+console.log("🚀 All env vars:", import.meta.env);
 console.log("🚀 VITE_API_URL in build:", import.meta.env.VITE_API_URL);
 console.log("🚀 Using baseURL:", baseURL);
+console.log("🚀 NODE_ENV:", import.meta.env.NODE_ENV);
 
 // -------------------------------------
 // ✅ Auth endpoints
