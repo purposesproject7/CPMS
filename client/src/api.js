@@ -170,7 +170,7 @@ import axios from "axios";
 
 // ✅ Use environment variable for base URL
 const API = axios.create({
-  baseURL: `${import.meta.env.VITE_API_URL}/api`, // Example: https://cpms-new-xge9.onrender.com/api
+  baseURL: "https://cpms-m75m.onrender.com/api", // Example: https://cpms-new-xge9.onrender.com/api
 });
 
 // ✅ Intercept all requests to add the token
