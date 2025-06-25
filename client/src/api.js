@@ -169,7 +169,11 @@
 import axios from "axios";
 
 // ✅ Use environment variable for base URL with fallback
-const baseURL = import.meta.env.VITE_API_URL || "https://cpms-m75m.onrender.com/api";
+// For development, use localhost; for production, use the deployed API
+const baseURL = import.meta.env.VITE_API_URL || 
+  (import.meta.env.DEV 
+    ? "http://localhost:3000/api" 
+    : "https://cpms-m75m.onrender.com/api");
 
 const API = axios.create({
   baseURL: baseURL,
@@ -194,6 +198,7 @@ console.log("🚀 All env vars:", import.meta.env);
 console.log("🚀 VITE_API_URL in build:", import.meta.env.VITE_API_URL);
 console.log("🚀 Using baseURL:", baseURL);
 console.log("🚀 NODE_ENV:", import.meta.env.NODE_ENV);
+console.log("🚀 DEV mode:", import.meta.env.DEV);
 
 // -------------------------------------
 // ✅ Auth endpoints
