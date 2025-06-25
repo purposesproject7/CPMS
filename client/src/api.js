@@ -7,6 +7,7 @@ axios.get(`${import.meta.env.VITE_API_URL}/api/student/profile`, {
   withCredentials: true
 });
 
+
 // Add authorization token to all requests if available
 API.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
@@ -15,6 +16,9 @@ API.interceptors.request.use((config) => {
   }
   return config;
 });
+
+console.log("🚀 VITE_API_URL in build:", import.meta.env.VITE_API_URL);
+
 
 // Auth endpoints
 export const adminLogin = (data) => API.post("/auth/login", data);
