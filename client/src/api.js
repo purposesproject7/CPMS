@@ -168,9 +168,11 @@
 
 import axios from "axios";
 
-// ✅ Use environment variable for base URL
+// ✅ Use environment variable for base URL with fallback
+const baseURL = import.meta.env.VITE_API_URL || "https://cpms-m75m.onrender.com/api";
+
 const API = axios.create({
-  baseURL: "https://cpms-m75m.onrender.com/api", // Example: https://cpms-new-xge9.onrender.com/api
+  baseURL: baseURL,
 });
 
 // ✅ Intercept all requests to add the token
@@ -182,8 +184,9 @@ API.interceptors.request.use((config) => {
   return config;
 });
 
-// ✅ Log at runtime to verify env is working (optional)
+// ✅ Log at runtime to verify env is working
 console.log("🚀 VITE_API_URL in build:", import.meta.env.VITE_API_URL);
+console.log("🚀 Using baseURL:", baseURL);
 
 // -------------------------------------
 // ✅ Auth endpoints
