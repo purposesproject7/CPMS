@@ -23,7 +23,9 @@ const allowedOrigins = [
   'https://cpms-check.vercel.app', // your deployed frontend on Vercel
   'http://localhost:5173',
   'https://cpms-check-git-main-sushindh-as-projects.vercel.app',
-  'https://cpms-check-4aouewl67-sushindh-as-projects.vercel.app'
+  'https://cpms-check-4aouewl67-sushindh-as-projects.vercel.app',
+  'https://cpms-check-phi.vercel.app',
+  'https://vercel.com/projectpurposes-projects/cpms-check/5mcKgJcTAW6nwuuyTY5h5Q9MEWfR'
 ];
 
 
