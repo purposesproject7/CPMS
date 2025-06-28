@@ -22,8 +22,8 @@ const allowedOrigins = [
   'http://localhost:3000', // your deployed frontend on Vercel
   'http://localhost:5173',
   'https://cpms-check-three.vercel.app',
-  'https://cpms-check-projectpurposes-projects.vercel.app',
-  'https://cpms-check-git-main-projectpurposes-projects.vercel.app'
+  'https://cpms-check-git-main-projectpurposes-projects.vercel.app',
+  'https://cpms-check-q99p4j89u-projectpurposes-projects.vercel.app'
 ];
 
 
