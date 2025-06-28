@@ -3,16 +3,15 @@ import { Navigate } from 'react-router-dom';
 import Navbar from "../Components/UniversalNavbar";
 
 const VITHomepage = () => {
-    const [navigateTo, setNavigateTo] = React.useState(null);
-    const [navigateTo1, setNavigateTo1] = React.useState(null);
+    const [navigateTo, setNavigateTo] = React.useState("/");
+    // const [navigateTo1, setNavigateTo1] = React.useState(null);
 
     if (navigateTo === "faculty") {
         return <Navigate to="/login" />;
-    }
-
-    if (navigateTo1 === "admin") {
+    }else if(navigateTo === "admin"){
         return <Navigate to="/admin/login" />;
     }
+
 
     return (
         <>
@@ -29,7 +28,7 @@ const VITHomepage = () => {
                         Faculty
                     </button>
                     <button className="w-64 h-40 bg-green-600 text-white text-3xl font-bold rounded-lg shadow-lg hover:bg-green-700 transition"
-                        onClick={() => setNavigateTo1("admin")}
+                        onClick={() => setNavigateTo("admin")}
                     >
                         Admin
                     </button>

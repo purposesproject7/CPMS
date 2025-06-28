@@ -17,12 +17,15 @@ connectDB();
 
 const app = express();
 
-// CORS setup — allow frontend origin
+
 const allowedOrigins = [
   'http://localhost:3000', // for development
-  'https://cpms-new.vercel.app', // your deployed frontend on Vercel
+  'https://cpms-check.vercel.app', // your deployed frontend on Vercel
   'http://localhost:5173',
+  'https://cpms-check-git-main-sushindh-as-projects.vercel.app',
+  'https://cpms-check-4aouewl67-sushindh-as-projects.vercel.app'
 ];
+
 
 app.use(cors({
   origin: allowedOrigins,
@@ -42,6 +45,11 @@ app.use("/api/admin", adminRouter);     // GET /api/admin/allFaculty etc.
 app.use("/api/student", studentRouter);
 app.use("/api/faculty", facultyRouter); // GET /api/faculty/getFacultyDetails/:id
 
+app.get('/', (req, res) => {
+  res.send('Server is up and running');
+});
+
+
 app.listen(PORT, () => {
-  console.log(`🚀 Server running at https://cpms-new-xge9.onrender.com/${PORT}`);
+  console.log(`🚀 Server is running on port ${PORT}`);
 });

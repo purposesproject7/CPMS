@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../App';
 import Navbar from '../Components/UniversalNavbar';
 import { adminLogin } from '../api';
-import axios from 'axios';
 import { Eye, EyeOff } from 'lucide-react';
 
 const AdminLogin = () => {
@@ -34,15 +33,15 @@ const AdminLogin = () => {
 
       if (!token) throw new Error('No token received');
 
-      // Store token
+      // Save token
       localStorage.setItem('token', token);
-      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
       // Update context
       login(token, 'admin');
 
-      // Navigate to dashboard
+      // Redirect
       navigate('/admin/panel-management');
+
     } catch (err) {
       console.error('Login error:', err);
       const msg = err.response?.data?.message || 'Login failed. Please try again.';
@@ -174,8 +173,8 @@ const AdminLogin = () => {
               </button>
             </div>
           </form>
-
-          <div className="mt-6">
+          
+          <div className="mt-3">
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
                 <div className="w-full border-t border-gray-300"></div>
@@ -186,6 +185,15 @@ const AdminLogin = () => {
                 </span>
               </div>
             </div>
+          </div>
+          <div className="text-center text-sm  mt-3">
+            <span className="text-gray-600">Are you a Faculty?</span>{' '}
+            <a
+              href="/login"
+              className="text-blue-600 hover:text-blue-500 font-medium"
+            >
+              Login here
+            </a>
           </div>
         </div>
       </div>
