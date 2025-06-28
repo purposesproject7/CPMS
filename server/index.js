@@ -24,8 +24,8 @@ const allowedOrigins = [
   'http://localhost:5173',
   'https://cpms-check-git-main-sushindh-as-projects.vercel.app',
   'https://cpms-check-4aouewl67-sushindh-as-projects.vercel.app',
-  'https://cpms-check-phi.vercel.app',
-  'https://cpms-check-bq7xt23wq-projectpurposes-projects.vercel.app',
+  'https://cpms-check-three.vercel.app',
+  'https://cpms-check-projectpurposes-projects.vercel.app',
   'https://cpms-check-git-main-projectpurposes-projects.vercel.app'
 ];
 
