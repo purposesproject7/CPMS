@@ -19,11 +19,8 @@ const app = express();
 
 
 const allowedOrigins = [
-  'http://localhost:3000', // for development
-  'https://cpms-check.vercel.app', // your deployed frontend on Vercel
+  'http://localhost:3000', // your deployed frontend on Vercel
   'http://localhost:5173',
-  'https://cpms-check-git-main-sushindh-as-projects.vercel.app',
-  'https://cpms-check-4aouewl67-sushindh-as-projects.vercel.app',
   'https://cpms-check-three.vercel.app',
   'https://cpms-check-projectpurposes-projects.vercel.app',
   'https://cpms-check-git-main-projectpurposes-projects.vercel.app'
